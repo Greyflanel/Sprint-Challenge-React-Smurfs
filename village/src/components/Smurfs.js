@@ -4,7 +4,7 @@ import Smurf from './Smurf';
 
 class Smurfs extends Component {
   render() {
-    console.log(this.props.smurfs);
+    console.log(this.props);
     
     return (
       <div className="Smurfs">
@@ -17,7 +17,7 @@ class Smurfs extends Component {
                 id={smurf.id}
                 age={smurf.age}
                 height={smurf.height}
-                key={smurf.id}
+                key={smurf.id} 
               />
             );
           })}
