@@ -11,6 +11,13 @@ class SmurfForm extends Component {
     };
   }
 
+  deleteSmurf = smurfId => {
+    axios
+    .delete(`http://localhost:3333/smurfs/${smurfId}`)
+    .then(response => this.setState({smurfs: response.data}))
+    .catch(error => console.log(error));
+    
+  }
   addSmurf = event => {
     event.preventDefault();
     const newSmurf = {
