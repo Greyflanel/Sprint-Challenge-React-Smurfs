@@ -1,11 +1,8 @@
 .App {
   text-align: center;
+  
 }
 input {
   display: flex;
-  margin-bottom: 20px;
   margin: 20px auto;
-}
-nav-link {
-  margin-right: 20px;
 }

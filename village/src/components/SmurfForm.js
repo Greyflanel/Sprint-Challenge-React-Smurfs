@@ -7,23 +7,24 @@ class SmurfForm extends Component {
     this.state = {
       name: '',
       age: '',
-      height: ''
+      height: '',
+      id: ''
     };
+    
   }
 
-  deleteSmurf = smurfId => {
+  deleteSmurf = () => {
     axios
-    .delete(`http://localhost:3333/smurfs/${smurfId}`)
+    .delete(`http://localhost:3333/smurfs/${this.state.id}`)
     .then(response => this.setState({smurfs: response.data}))
     .catch(error => console.log(error));
     
   }
-  addSmurf = event => {
-    // event.preventDefault();
+  addSmurf = () => {
     const newSmurf = {
       name: this.state.name,
       age: this.state.age,
-      height: this.state.height 
+      height: this.state.height, 
     }
     axios
     .post("http://localhost:3333/smurfs", newSmurf)
@@ -34,7 +35,8 @@ class SmurfForm extends Component {
     this.setState({
       name: '',
       age: '',
-      height: ''
+      height: '',
+      id: ''
     });
   }
   
@@ -43,8 +45,7 @@ class SmurfForm extends Component {
   };
 
   render() {
-    // console.log(this.state);
-    
+    console.log(this.props)
     return (
       <div className="SmurfForm">
         <form onSubmit={this.addSmurf}>
@@ -66,7 +67,11 @@ class SmurfForm extends Component {
             value={this.state.height}
             name="height"
           />
-          <button type="submit" onClick={this.addSmurf}>Add to the village</button>
+          <button type="submit" onClick={this.addSmurf}>Add to the Village</button>
+        </form>
+        <form onSubmit={this.deleteSmurf}>
+        <input onChange={this.handleInputChange} placeholder="Smurf Id number" value={this.state.id} name="id"/>
+        <button type="submit" onClick={this.deleteSmurf}>Delete from Village</button>
         </form>
       </div>
     );

@@ -3,7 +3,7 @@ import Smurf from './Smurf';
 
 class Smurfs extends Component {
   render() {
-    console.log(this.props);
+    
     
     return (
       <div className="Smurfs">
