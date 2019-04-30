@@ -36,10 +36,10 @@ class App extends Component {
         <NavLink exact to="/"> Home </NavLink>
         <NavLink  to="/smurf-form"> Add a Smurf </NavLink>
         <Route exact path="/" render={() => <Smurfs smurfs={this.state.smurfs} />} />
-        <Route path="/:id" smurfs={this.props.smurfs} smurfId={this.state.id} component={SmurfForm} />
+        <Route path="/smurf-form" smurfs={this.props.smurfs} smurfId={this.smurfId} component={SmurfForm} />
       </div>
     );
   }
-};
+}
 
 export default App;
