@@ -20,6 +20,20 @@ class SmurfForm extends Component {
     .catch(error => console.log(error));
     
   }
+  putSmurf = () => {
+     const updateSmurf = {
+      name: this.state.newName,
+      age: this.state.newAge,
+      height: this.state.newHeight,
+      id: this.state.id
+    }
+  axios
+  .put(`http://localhost:3333/smurfs/${this.state.id}`, updateSmurf)
+  .then(response =>  this.setState({smurfs: response.data.updateSmurf}))
+  .catch(error => console.log(error));
+  
+  }
+  
   addSmurf = () => {
     const newSmurf = {
       name: this.state.name,
@@ -52,28 +66,55 @@ class SmurfForm extends Component {
         <form onSubmit={this.addSmurf}>
           <input
             onChange={this.handleInputChange}
-            placeholder="name"
+            placeholder=" name"
             value={this.state.name}
             name="name"
           />
           <input
             onChange={this.handleInputChange}
-            placeholder="age"
+            placeholder=" age"
             value={this.state.age}
             name="age"
           />
           <input
             onChange={this.handleInputChange}
-            placeholder="height"
+            placeholder=" height"
             value={this.state.height}
             name="height"
           />
           <button type="submit" onClick={this.addSmurf}>Add to the Village</button>
         </form>
         <form onSubmit={this.deleteSmurf}>
-        <input onChange={this.handleInputChange} placeholder="Smurf Id number" value={this.state.id} name="id"/>
+        <input onChange={this.handleInputChange} placeholder=" Smurf Id number" value={this.state.id} name="id"/>
         <button type="submit" onClick={this.deleteSmurf}>Delete from Village</button>
         </form>
+        <form onSubmit={this.putSmurf}>
+          <input 
+          onChange={this.handleInputChange} 
+          placeholder=" Change Smurf Name"
+          value={this.state.newName} 
+          name="newName"
+          />
+          <input
+          onChange={this.handleInputChange}
+          placeholder=" Change Smurf Age"
+          value={this.state.newAge} 
+          name="newAge"
+          />
+          <input 
+          onChange={this.handleInputChange}
+          placeholder=" Change Smurf Height"
+          value={this.state.newHeight}
+          name="newHeight"
+          />
+          <input 
+          onChange={this.handleInputChange}
+          placeholder=" Smurf Id number to Update"
+          value={this.state.id}
+          name="id"
+          />
+          <button type="submit" onClick={this.putSmurf}> Update Smurf in Village </button>
+          </form>
       </div>
     );
   }
