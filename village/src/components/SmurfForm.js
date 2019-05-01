@@ -29,7 +29,7 @@ class SmurfForm extends Component {
     }
   axios
   .put(`http://localhost:3333/smurfs/${this.state.id}`, updateSmurf)
-  .then(response =>  this.setState({smurfs: response.data.updateSmurf}))
+  .then(response =>  this.setState({smurfs: response.data}))
   .catch(error => console.log(error));
   
   }
@@ -84,37 +84,37 @@ class SmurfForm extends Component {
           />
           <button type="submit" onClick={this.addSmurf}>Add to the Village</button>
         </form>
-        <form onSubmit={this.deleteSmurf}>
-        <input onChange={this.handleInputChange} placeholder=" Smurf Id number" value={this.state.id} name="id"/>
-        <button type="submit" onClick={this.deleteSmurf}>Delete from Village</button>
-        </form>
         <form onSubmit={this.putSmurf}>
           <input 
           onChange={this.handleInputChange} 
-          placeholder=" Change Smurf Name"
+          placeholder=" change smurf name"
           value={this.state.newName} 
           name="newName"
           />
           <input
           onChange={this.handleInputChange}
-          placeholder=" Change Smurf Age"
+          placeholder=" change smurf age"
           value={this.state.newAge} 
           name="newAge"
           />
           <input 
           onChange={this.handleInputChange}
-          placeholder=" Change Smurf Height"
+          placeholder=" change smurf height"
           value={this.state.newHeight}
           name="newHeight"
           />
           <input 
           onChange={this.handleInputChange}
-          placeholder=" Smurf Id number to Update"
+          placeholder=" smurf id number to update"
           value={this.state.id}
           name="id"
           />
           <button type="submit" onClick={this.putSmurf}> Update Smurf in Village </button>
           </form>
+          <form onSubmit={this.deleteSmurf}>
+        <input onChange={this.handleInputChange} placeholder=" smurf id number" value={this.state.id} name="id"/>
+        <button type="submit" onClick={this.deleteSmurf}>Delete from Village</button>
+        </form>
       </div>
     );
   }

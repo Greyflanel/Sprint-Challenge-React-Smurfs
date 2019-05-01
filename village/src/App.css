@@ -17,7 +17,7 @@ margin-left: 60px;
 }
 .nav {
   height: 40px;
-  width: 30%;
+  width: 20%;
 }
 .Smurf {
   border: 2px solid #0fa8eb;
@@ -27,6 +27,9 @@ margin-left: 60px;
 }
 button {
   background-color:#7cd3f8 ;
+  display: flex;
+ margin-left: 30px;
+ width: 100px;
 }
 ul {
   display: flex;
