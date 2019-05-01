@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   display: flex;
+  
 }
 input {
   display: flex;
@@ -22,7 +23,7 @@ margin-left: 60px;
   border: 2px solid #0fa8eb;
   color: #0fa8eb;
   background-color: rgb(246, 246, 25);
-  width: 500px;
+  width: 300px;
 }
 button {
   background-color:#7cd3f8 ;
@@ -34,4 +35,8 @@ ul {
 }
 h1 {
   color: blue;
+}
+img {
+  width: 30%;
+  
 }
