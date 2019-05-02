@@ -1,16 +1,19 @@
 import React from 'react';
 
-const smurfData = []; // get the data from the same source above
 
-function SingleSmurf(props) {
-  const smurf = smurfData.find(smurf => props.match.params.id === `${this.smurf.id}`);
-  console.log(props);
-  
+
+class SingleSmurf extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    componentDidMount() {const id = this.props.match.params.id}
+    smurfData = this.props.smurfs;
+    smurf = this.smurfData.find(smurf => this.id === `${smurf.id}`);
+  render() {
   return (
-    
-    <h1>{props.name}</h1>
-    
+    <h1>{this.props.name}</h1> 
   );
+}
 }
 
 export default SingleSmurf;
