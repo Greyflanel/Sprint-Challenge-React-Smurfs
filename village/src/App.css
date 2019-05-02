@@ -5,9 +5,9 @@
 }
 input {
   display: flex;
-  justify-content: flex-start;
   margin: 20px;
   background-color: rgb(228, 228, 109);
+  
 }
 .active {
 margin-right: 60px;
@@ -18,6 +18,7 @@ margin-left: 60px;
 .nav {
   height: 40px;
   width: 20%;
+  margin-left: 40px;
 }
 .Smurf {
   border: 2px solid #0fa8eb;
@@ -30,6 +31,7 @@ button {
   display: flex;
  margin-left: 30px;
  width: 100px;
+ border-radius: 8px;
 }
 ul {
   display: flex;
@@ -41,5 +43,4 @@ h1 {
 }
 img {
   width: 30%;
-  
 }

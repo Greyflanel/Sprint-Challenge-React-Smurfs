@@ -4,6 +4,7 @@ import axios from "axios";
 import SmurfForm from "./components/SmurfForm";
 import "./App.css";
 import Smurfs from "./components/Smurfs";
+import SingleSmurf from './components/SingleSmurf';
 
 class App extends Component {
   constructor(props) {
@@ -25,22 +26,24 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state);
+    console.log(this.state);
 
     return (
       <div className="App">
       <div className="nav">
         <NavLink exact to="/">
           {" "}
-          Village{" "}
+          Village {" "}
         </NavLink> 
+        <NavLink to={`single-smurf/${this.props.id}`}> Smurf </NavLink>
         <NavLink to="/smurf-form"> Add a Smurf </NavLink>
         <div>
-          <Route path="/smurf-form" smurfs={this.props.smurfs} smurfId={this.smurfId} component={SmurfForm} />
+          <Route path="/smurf-form" smurfs={this.props.smurfs}  component={SmurfForm} />
+          <Route exact to="/single-smurf/:id" smurfs={this.state.smurfs} smurfId={this.smurfId} component={SingleSmurf}/>
         </div>
         </div>
         <div>
-          <Route path="/" render={() => <Smurfs smurfs={this.state.smurfs} />} />
+          <Route exact path="/" render={() => <Smurfs smurfs={this.state.smurfs} />} />
         </div>
       </div>
     );

@@ -8,7 +8,7 @@ class SmurfForm extends Component {
       name: '',
       age: '',
       height: '',
-      id: ''
+      
     };
     
   }
@@ -25,7 +25,7 @@ class SmurfForm extends Component {
       name: this.state.newName,
       age: this.state.newAge,
       height: this.state.newHeight,
-      id: this.state.id
+      
     }
   axios
   .put(`http://localhost:3333/smurfs/${this.state.id}`, updateSmurf)
@@ -39,7 +39,7 @@ class SmurfForm extends Component {
       name: this.state.name,
       age: this.state.age,
       height: this.state.height, 
-      id: this.state.id 
+      
     }
     axios
     .post("http://localhost:3333/smurfs", newSmurf)
@@ -51,7 +51,7 @@ class SmurfForm extends Component {
       name: '',
       age: '',
       height: '',
-      id: ''
+      
     });
   }
   

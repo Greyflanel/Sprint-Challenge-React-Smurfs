@@ -8,7 +8,7 @@ const Smurf = props => {
       <h3>{props.name}</h3>
       <strong>{props.height} cm tall</strong>
       <p>{props.age} smurf years old</p>
-     <p> smurf id: {props.id} </p> 
+      
       <img src="https://vignette.wikia.nocookie.net/smurfs/images/9/95/Clumsy_1.png/revision/latest?cb=20141120070054" alt=""/>
     </div>
   );

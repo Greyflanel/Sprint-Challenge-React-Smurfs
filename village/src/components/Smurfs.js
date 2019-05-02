@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Smurf from './Smurf';
 
+
 class Smurfs extends Component {
   render() {
     
@@ -17,7 +18,7 @@ class Smurfs extends Component {
                 height={smurf.height}
                 key={smurf.id}
                 id={smurf.id}
-                image={smurf.image} 
+                
               />
             );
           })}
