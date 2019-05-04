@@ -1,3 +1,46 @@
 .App {
   text-align: center;
+  display: flex;
+  
+}
+input {
+  display: flex;
+  margin: 20px;
+  background-color: rgb(228, 228, 109);
+  
+}
+.active {
+margin-right: 60px;
+margin-left: 60px;
+  color: blue;
+  
+}
+.nav {
+  height: 40px;
+  width: 20%;
+  margin-left: 40px;
+}
+.Smurf {
+  border: 2px solid #0fa8eb;
+  color: #0fa8eb;
+  background-color: rgb(246, 246, 25);
+  width: 300px;
+}
+button {
+  background-color:#7cd3f8 ;
+  display: flex;
+ margin-left: 30px;
+ width: 100px;
+ border-radius: 8px;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+h1 {
+  color: blue;
+}
+img {
+  width: 30%;
 }
